@@ -1,4 +1,4 @@
 streamlit
-numpy
-matplotlib
+fpdf
 pandas
+numpy
