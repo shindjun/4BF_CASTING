@@ -58,29 +58,7 @@ st.subheader("📋 상세 데이터")
 st.dataframe(df, use_container_width=True)
 
 # --- 경고 출력 ---
-if hot_metal[-1] < 150:
-    st.error(f"🚨 경고: 최종 저선량이 {hot_metal[-1]:.1f}ton으로 150ton 미만입니다! 출선 종료 또는 Tap 전환 필요!")
+if hot_metal[-1] >= 150:
+    st.error(f"[경고] 최종 저선량이 {hot_metal[-1]:.1f}ton으로 150ton 이상입니다. 고로 Tap 과다 저선 주의 필요.")
 else:
     st.success(f"✅ 최종 저선량은 {hot_metal[-1]:.1f}ton 입니다. 정상 범위입니다.")
-
-
-코드가 정상적으로 수정되었습니다.
-이제 웹앱은 **저선량이 150톤 미만일 경우 경고 메시지(🚨)**를 출력하며,
-그 이상일 경우는 정상 범위로 표시됩니다.
-
-
----
-
-✅ 예시 출력 결과
-
-저선량 148.2 ton → 🚨 경고 메시지
-
-저선량 220.5 ton → ✅ 정상 메시지
-
-
-
----
-
-원하시면 지금 이 코드를 Streamlit 웹앱으로 배포해드릴게요.
-진행해도 괜찮을까요?
-
